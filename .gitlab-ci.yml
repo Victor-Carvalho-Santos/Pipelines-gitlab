@@ -21,7 +21,7 @@ executar_teste2:
 criar_imagens:
   stage: build
   script:
-    -echo_erro "Criando as imagens.."
+    -echo "Criando as imagens.."
 
 push_imagens: # empurrar, subir as imagens 
   stage: build

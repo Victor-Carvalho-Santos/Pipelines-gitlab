@@ -1,0 +1,16 @@
+executar_teste:
+  before_script: # antes do roteiro 
+    - echo "Preparando testes.."
+  script:
+    - echo "Executando testes..."
+
+  after_script: # depois do roteiro 
+    - echo "Apagando arquivos temporários.."
+
+criar_imagens:
+  script:
+    -echo "Criando as imagens.."
+
+push_imagens: # empurrar, subir as imagens 
+  script:
+    - echo "Realizando upload das imagens.."

@@ -1,7 +1,7 @@
 stages:
-  -teste
-  -build
-  -deploy
+  - teste
+  - build
+  - deploy
 
 executar_teste: 
   stage: teste

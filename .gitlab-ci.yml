@@ -21,11 +21,15 @@ executar_teste2:
 
 
 criar_imagens:
+  only:
+    - main
   stage: build
   script:
     -echo "Criando as imagens.."
 
-push_imagens: # empurrar, subir as imagens 
+push_imagens: # empurrar, subir as imagens
+  only:
+    - main
   needs: #"Needs" permite definir dependências entre jobs em um pipeline. Isso garante que um job só será executado após a conclusão bem-sucedida de suas dependências especificadas.
     - criar_imagens
   stage: build
@@ -33,6 +37,8 @@ push_imagens: # empurrar, subir as imagens
     - echo "Realizando upload das imagens.."
 
 kubernetes:
+  only:
+    - main
   stage: deploy
   script:
     - echo "executando deploy"

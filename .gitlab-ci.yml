@@ -7,8 +7,10 @@ executar_teste:
   stage: teste
   before_script: # antes do roteiro 
     - echo "Preparando testes.."
+    - chmod +x ./script.sh
   script:
-    - echo "Executando testes..."
+    - ./sript.sh
+
   after_script: # depois do roteiro 
     - echo "Apagando arquivos temporários.."
 
@@ -24,6 +26,8 @@ criar_imagens:
     -echo "Criando as imagens.."
 
 push_imagens: # empurrar, subir as imagens 
+  needs: #"Needs" permite definir dependências entre jobs em um pipeline. Isso garante que um job só será executado após a conclusão bem-sucedida de suas dependências especificadas.
+    - criar_imagens
   stage: build
   script:
     - echo "Realizando upload das imagens.."

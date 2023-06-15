@@ -16,9 +16,8 @@ executar_teste:
 
 executar_teste2:
   stage: teste
+  script:
     - echo "executando teste 2..."
-
-
 
 criar_imagens: 
   only:

@@ -3,7 +3,7 @@ stages:
   -build
   -deploy
 
-executar_teste:
+executar_teste: 
   stage: teste
   before_script: 
     - echo "Preparando testes.."

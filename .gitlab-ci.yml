@@ -1,3 +1,9 @@
+workflow:
+  rules:
+    - if:$CI_COMMIT_BRANCH != "main"
+      when: never
+      when: always
+
 stages:
   - teste
   - build
@@ -19,15 +25,11 @@ executar_teste2:
     - echo "executando teste 2..."
 
 criar_imagens: 
-  only:
-    - main
   stage: build
   script:
     -echo "Criando as imagens.."
 
 push_imagens:  
-  only:
-    - main
   needs: 
     - criar_imagens
   stage: build
@@ -35,8 +37,6 @@ push_imagens:
     - echo "Realizando upload das imagens.."
 
 kubernetes:
-  only:
-    - main
   stage: deploy
   script:
     - echo "executando deploy"

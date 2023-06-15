@@ -1,7 +1,7 @@
 stages:
-  -teste
-  -build
-  -deploy
+  - teste
+  - build
+  - deploy
 
 executar_teste:
   stage: teste
@@ -14,6 +14,7 @@ executar_teste:
 
 executar_teste2:
   stage: teste
+  script:
     - echo "executando teste 2..."
 
 

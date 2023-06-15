@@ -5,8 +5,8 @@ stages:
 
 executar_teste: 
   stage: teste
-  before_script: 
-    - echo "Preparando testes......"
+  before_script:  
+    - echo "Preparando testes...."
     - chmod +x ./script.sh
   script:
     - ./sript.sh
@@ -20,14 +20,14 @@ executar_teste2:
 
 
 
-criar_imagens:
+criar_imagens: 
   only:
     - main
   stage: build
   script:
     -echo "Criando as imagens.."
 
-push_imagens: 
+push_imagens:  
   only:
     - main
   needs: 

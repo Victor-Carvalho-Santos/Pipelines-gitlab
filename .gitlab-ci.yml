@@ -6,7 +6,7 @@ stages:
 executar_teste: 
   stage: teste
   before_script:  
-    - echo "Preparando testes...."
+    - echo "Preparando testes"
     - chmod +x ./script.sh
   script:
     - ./sript.sh

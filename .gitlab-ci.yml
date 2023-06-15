@@ -10,7 +10,6 @@ executar_teste:
     - chmod +x ./script.sh
   script:
     - ./sript.sh
-
   after_script: 
     - echo "Apagando arquivos temporários.."
 

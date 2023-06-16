@@ -16,6 +16,7 @@ executar_teste2:
   stage: teste
   script:
     - echo "executando teste 2..."
+    - npm version 
 
 
 
